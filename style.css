@@ -1,0 +1,396 @@
+/* Estilos Gerais */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #2a0347, #350552, #471761);
+  color: #fff;
+  scroll-snap-type: y mandatory;
+}
+
+.fade-in {
+  opacity: 0; 
+  transform: translateY(30px); 
+  transition: opacity 1.5s ease, transform 1.5s ease; 
+}
+
+/* Classe que ativa a animação */
+.fade-in.active {
+  opacity: 1; 
+  transform: translateY(0); 
+}
+
+/* Introdução */
+.introduction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 50px;
+  border-left: 5px solid #6f2dbd; /* Borda temática */
+  background-color: #220245;
+}
+
+.intro-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap; /* Garante que os itens fiquem lado a lado */
+  background-color: #2e004f;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.intro-text {
+  max-width: 600px;
+}
+
+.intro-text h2 {
+  font-size: 2.5rem;
+  color: #d4b1f3;
+}
+
+.intro-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #e6e2f1;
+}
+
+.introduction img {
+  width: 250px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  margin-right: 20px; /
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 30px;
+}
+
+.profile img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border: 4px solid #c5afcf;
+}
+
+.profile h1 {
+  font-size: 2.5rem;
+  margin: 10px 0;
+  color: #cdb4db;
+}
+
+.profile p {
+  font-size: 1.2rem;
+  color: #bf85d6;
+}
+
+/* Páginas */
+.page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  scroll-snap-align: start;
+  text-align: center;
+}
+
+.page:nth-child(even) {
+  background: linear-gradient(180deg, #350552, #2a0347);
+}
+
+/* Introdução */
+#introducao h2 {
+  font-size: 3rem;
+  color: #cdb4db;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px #000;
+}
+
+#introducao p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #f3f3f3;
+}
+
+.section-title {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(218, 156, 244);
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+
+  /* Fundo do GIF */
+  background-image: url('assets/img/background.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left center;
+  border-radius: 0; 
+  height: 150px;
+
+  margin-bottom: 50px;
+  margin-top: 100px;
+}
+
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.card {
+  position: relative;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Título do Card */
+.card-title {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.8);
+  color: #cdb4db;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+/* Conteúdo ao passar o mouse */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(40, 10, 60, 0.85);  /* Opacidade para melhor visibilidade */
+  color: #fff;
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+  padding-top: 20px;  /* Ajuste de espaçamento superior */
+  box-sizing: border-box;  /* Para garantir que o padding não afete o tamanho */
+}
+
+
+.card-content p {
+  font-size: 1.2rem;
+  margin: 0;
+  line-height: 1.5;
+  color: #fff; 
+  opacity: 0;  
+  animation: fadeInContent 1s forwards; 
+  animation-delay: 0.2s; 
+}
+
+.card:hover .card-content p {
+  opacity: 1;  
+}
+
+
+.card:hover .card-content {
+  transform: translateY(0);
+}
+
+/*Habilidades*/
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 300px;
+  padding: 20px;
+}
+
+.skill {
+  background: rgba(117, 38, 169, 0.85);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  background-blend-mode: multiply;
+  filter: brightness(1.0);
+  margin-top: -250px;
+}
+
+.skill h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #cdb4db;
+}
+
+.skill p {
+  font-size: 1.2rem;
+  color: #f3f3f3;
+  line-height: 1.6;
+}
+
+.skill:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Contato */
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(30, 10, 50, 0.9); 
+  text-align: center;
+  gap: 23px; 
+}
+
+.social p {
+  font-size: 1.5rem; /* Texto menor */
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40px; 
+  height: 40px;
+  font-size: 1.2rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out, background 0.3s;
+}
+
+.social a img {
+  width: 40px; /* Redimensionar imagens */
+  height: 40px;
+  margin-bottom: 5px;
+}
+
+.social a:hover {
+  transform: scale(1.2);
+  background: #a377d2;
+}
+
+@media (max-width: 600px) {
+  .social a {
+    width: 35px; /* Ícones menores para telas pequenas */
+    height: 35px;
+  }
+  .social a img {
+    width: 15px; /* Ajuste proporcional */
+    height: 15px;
+  }
+}
+
+
+
+@media (max-width: 600px) {
+  .social a {
+      font-size: 2rem; 
+  }
+}
+
+@keyframes fadeInContent {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glossário de Navegação */
+.glossario {
+  position: fixed; /* Fica no topo da página mesmo ao rolar */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(30, 10, 50, 0.9); /* Fundo escuro com transparência */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  z-index: 1000; /* Sempre acima do restante do conteúdo */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+}
+
+.glossario a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.glossario a:hover {
+  color: #ff6f61; /* Muda a cor ao passar o mouse */
+}
+
+body {
+  padding-top: 50px; /* Evita que o conteúdo fique escondido atrás do glossário */
+}
+
+/* Responsividade para Glossário */
+@media (max-width: 600px) {
+  .glossario {
+    flex-wrap: wrap; /* Permite quebra de linha se necessário */
+    gap: 15px;
+  }
+
+  .glossario a {
+    font-size: 0.9rem; /* Texto menor em telas pequenas */
+  }
+}
