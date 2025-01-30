@@ -65,7 +65,7 @@ body {
   height: 320px;
   object-fit: cover;
   border-radius: 8px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 10px rgba(60, 4, 63, 0.94);
   margin-right: 20px; /
 }
 
