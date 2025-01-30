@@ -116,6 +116,54 @@ body {
   box-shadow: 0px 0px 25px rgba(129, 5, 135, 0.94);
 }
 
+/*Botões do CV*/
+.cv-buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+.cv-buttons a {
+  text-decoration: none;
+  font-size: 1.6rem;
+  padding: 10px 10px;
+  border-radius: 5px;
+  color: white;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.btn-download {
+  background-color: #6f2dbd;
+}
+
+.btn-view {
+  font-size: 1rem;
+  background-color: #350552;
+}
+
+.cv-buttons a:hover {
+  opacity: 0.8;
+}
+
+.voltar-button {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+.voltar-button a {
+  text-decoration: none;
+  font-size: 1.6rem;
+  padding: 10px 10px;
+  border-radius: 5px;
+  color: white;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+
+
 /* Header */
 header {
   text-align: center;
