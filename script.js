@@ -19,4 +19,18 @@ document.addEventListener("DOMContentLoaded", () => {
   fadeInElements.forEach((element) => {
     observer.observe(element); // Observa cada elemento com a classe .fade-in
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+            }
+        });
+    });
+
+    elements.forEach(el => observer.observe(el));
+});
+
 });
