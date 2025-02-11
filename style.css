@@ -66,6 +66,7 @@ body {
   background-color: #220245;
   flex-wrap: wrap;
   text-align: center;
+  margin-top: -180px;
 }
 
 .intro-container {
@@ -77,7 +78,7 @@ body {
   background-color: #2e004f;
   padding: 30px;
   border-radius: 12px;
-  max-width: 900px;
+  max-width: 500px;
   margin: auto;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -190,12 +191,12 @@ header {
 
 /* Páginas */
 .page {
-  height: 100vh;
+  height: 110vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 20px;
+  padding: 120px;
   scroll-snap-align: start;
   text-align: center;
 }
@@ -241,13 +242,13 @@ header {
   height: 150px;
 
   margin-bottom: 50px;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 20px;
   width: 100%;
   max-width: 1200px;
